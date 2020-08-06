@@ -75,8 +75,8 @@ class LinkedList {
     while(counter != index){
       currentNode =this.head.next;
       counter++
-    }
-  } return currentNode
+    }return currentNode
+  } 
 }
 
 let myLinkedList = new LinkedList(10);
@@ -84,7 +84,7 @@ myLinkedList.append(5);
 myLinkedList.append(16);
 myLinkedList.append(7);
 myLinkedList.prepend(17);
-myLinkedList.printList()
+myLinkedList.insert(1,2)
 
 
 
