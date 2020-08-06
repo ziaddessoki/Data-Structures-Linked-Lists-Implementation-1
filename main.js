@@ -45,6 +45,7 @@ class LinkedList {
     this.length++;
     return this
   }
+  
 
   prepend(value){
      const newNode = new Node(value)
@@ -54,7 +55,7 @@ class LinkedList {
     return this;
   }
   insert(index,value){
-    
+
   }
 }
 
