@@ -28,6 +28,16 @@ class LinkedList {
     this.tail = this.head;
     this.length = 1
   }
+
+  printList(){
+    const arr = new Array()
+    let currentNode = this.head;
+    while(currentNode !== null){
+      arr.push(currentNode.value);
+      currentNode = currentNode.next
+    }
+    return arr
+  }
   append(value){
     const newNode = new Node(value)
     this.tail.next = newNode;
@@ -50,6 +60,7 @@ myLinkedList.append(5);
 myLinkedList.append(16);
 myLinkedList.append(7);
 myLinkedList.prepend(17);
+myLinkedList.printList()
 
 
 
