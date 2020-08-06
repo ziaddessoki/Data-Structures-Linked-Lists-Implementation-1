@@ -61,7 +61,7 @@ class LinkedList {
        return this.append(value)
     }
     const newNode = new Node(value)
-    const leader = this.traverseToIndex(index-1)
+    const leader = this.lookup(index-1)
     const holdingPoint = leader.next
     leader.next = newNode;
     newNode.next = holdingPoint;
@@ -69,7 +69,7 @@ class LinkedList {
     return this.printList()
   }
 
-  traverseToIndex(index){
+  lookup(index){
     let counter = 0;
     let currentNode = this.head
     while(counter != index){
