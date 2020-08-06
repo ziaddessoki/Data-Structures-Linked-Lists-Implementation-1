@@ -77,6 +77,14 @@ class LinkedList {
       counter++
     }return currentNode
   } 
+
+  remove(index){
+    const leader = this.lookup(index-1)
+    const currentNode = leader.next;
+    leader.next = currentNode.next;
+    this.length--;
+    return this.printList()
+  }
 }
 
 let myLinkedList = new LinkedList(10);
@@ -84,7 +92,8 @@ myLinkedList.append(5);
 myLinkedList.append(16);
 myLinkedList.append(7);
 myLinkedList.prepend(17);
-myLinkedList.insert(1,2)
+myLinkedList.insert(1,2);
+myLinkedList.remove(1)
 
 
 
