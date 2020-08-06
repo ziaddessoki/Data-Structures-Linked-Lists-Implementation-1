@@ -53,6 +53,9 @@ class LinkedList {
     this.length++;
     return this;
   }
+  insert(index,value){
+    
+  }
 }
 
 let myLinkedList = new LinkedList(10);
