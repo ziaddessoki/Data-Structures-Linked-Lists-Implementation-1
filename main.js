@@ -45,7 +45,7 @@ class LinkedList {
     this.length++;
     return this
   }
-  
+
 
   prepend(value){
      const newNode = new Node(value)
@@ -54,9 +54,29 @@ class LinkedList {
     this.length++;
     return this;
   }
-  insert(index,value){
 
+
+  insert(index,value){
+    if(index>=this.length){
+       return this.append(value)
+    }
+    const newNode = new Node(value)
+    const leader = this.traverseToIndex(index-1)
+    const holdingPoint = leader.next
+    leader.next = newNode;
+    newNode.next = holdingPoint;
+    this.length++;
+    return this.printList()
   }
+
+  traverseToIndex(index){
+    let counter = 0;
+    let currentNode = this.head
+    while(counter != index){
+      currentNode =this.head.next;
+      counter++
+    }
+  } return currentNode
 }
 
 let myLinkedList = new LinkedList(10);
