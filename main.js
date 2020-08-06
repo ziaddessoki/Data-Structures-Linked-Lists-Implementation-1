@@ -85,16 +85,33 @@ class LinkedList {
     this.length--;
     return this.printList()
   }
+
+  reverse(){
+    if(!this.head.next){return this}
+    let first = this.head;
+    this.tail =this.head
+    let second = first.next
+
+    while(second){
+      let temp = second.next;
+      second.next = first;
+      first = second;
+      second =temp
+    }
+    this.head.next =null;
+    this.head =first
+    return this.printList()
+  }
 }
 
-//let myLinkedList = new LinkedList(10);
-// myLinkedList.append(5);
-// myLinkedList.append(16);
-// myLinkedList.append(7);
-// myLinkedList.prepend(17);
-// myLinkedList.insert(1,2);
-// myLinkedList.remove(1)
-// myLinkedList.remove(1)
+let myLinkedList = new LinkedList(10);
+myLinkedList.append(5);
+myLinkedList.append(16);
+myLinkedList.append(7);
+myLinkedList.prepend(17);
+myLinkedList.insert(1,2);
+myLinkedList.remove(1)
+myLinkedList.reverse()
 
 
 
@@ -180,13 +197,13 @@ class DoublyLinkedList {
   }
 }
 
-let myLinkedList2 = new DoublyLinkedList(10);
-myLinkedList2.append(5);
-myLinkedList2.append(16);
-myLinkedList2.append(7);
-myLinkedList2.prepend(17);
-myLinkedList2.printList()
-myLinkedList2.insert(1,2);
+// let myLinkedList2 = new DoublyLinkedList(10);
+// myLinkedList2.append(5);
+// myLinkedList2.append(16);
+// myLinkedList2.append(7);
+// myLinkedList2.prepend(17);
+// myLinkedList2.printList()
+// myLinkedList2.insert(1,2);
 // myLinkedList2.remove(1)
 // myLinkedList2.remove(1)
 
