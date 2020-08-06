@@ -153,9 +153,11 @@ class DoublyLinkedList {
     }
     const newNode = new Node(value)
     const leader = this.lookup(index-1)
-    const holdingPoint = leader.next
+    const follower = leader.next
     leader.next = newNode;
-    newNode.next = holdingPoint;
+    newNode.next = follower;
+    follower.perv = newNode
+    newNode.perv = leader
     this.length++;
     return this.printList()
   }
@@ -184,7 +186,7 @@ myLinkedList2.append(16);
 myLinkedList2.append(7);
 myLinkedList2.prepend(17);
 myLinkedList2.printList()
-// myLinkedList2.insert(1,2);
+myLinkedList2.insert(1,2);
 // myLinkedList2.remove(1)
 // myLinkedList2.remove(1)
 
